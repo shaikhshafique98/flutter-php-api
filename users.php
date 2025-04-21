@@ -1,6 +1,11 @@
 
 <?php
-
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: *");
+header("Content-Type: application/json");
+header('Access-Control-Allow-Headers: Content-Type, Authorization');
+header("Access-Control-Allow-Headers: Content-Type");
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
@@ -8,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 
-$conn = new mysqli("localhost", "root", "", "demo_db");
+$conn = new mysqli("sql210.infinityfree.com", "if0_38792865", "Arogyasevi123", "if0_38792865_demo_db");
 
 if ($conn->connect_error) {
     http_response_code(500);
